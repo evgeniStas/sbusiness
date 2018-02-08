@@ -5,21 +5,47 @@
  * Date: 06.02.18
  * Time: 16:54
  */
+//setlocale(LC_MONETARY, 'ru_RU');
 ?>
-<html>
+<html <?php language_attributes(); ?>>
     <head>
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="<?php echo get_template_directory_uri();?>/js/main.js"></script>
+        <?php wp_head(); ?>
     </head>
     <body>
         <div class="left-menu">
-            <div class="item active"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
+            <a href="#home">
+                <div class="item">
+                    <div class="line active"></div>
+                </div>
+            </a>
+            <a href="#about">
+                <div class="item">
+                    <div class="line"></div>
+                </div>
+            </a>
+            <a href="#price">
+                <div class="item">
+                    <div class="line"></div>
+                </div>
+            </a>
+            <a href="#news">
+                <div class="item">
+                    <div class="line"></div>
+                </div>
+            </a>
+            <a href="#questions">
+                <div class="item">
+                    <div class="line"></div>
+                </div>
+            </a>
+            <a href="#location">
+                <div class="item">
+                    <div class="line"></div>
+                </div>
+            </a>
         </div>
         <div class="header">
             <div class="container">
@@ -31,13 +57,70 @@
                 <div class="lines">
                     <span class="icon2-Menu_ic"></span>
                 </div>
+                <div class="lang">
+                    <select id="lang-select">
+                    <?php
+
+                    $translations = pll_the_languages(array('raw'=>1));
+                    foreach($translations as $lang){
+                        $lang["locale"] = str_replace("-","_", $lang["locale"]);
+                        $selected ="";
+                        if($lang["locale"] == get_locale()) {
+                            $selected="selected";
+                        }
+                        echo $lang["locale"]." vs ".get_locale();
+                        ?>
+                        <option <?php echo $selected;?> data-url="<?php echo $lang["url"];?>"><?php echo $lang["name"];?></option>
+                        <?php
+                    }
+                    ?>
+                    <select>
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="menu hidden">
+                    <div class="menu-info">
+                        <div class="item">
+                            <h1>Location</h1>
+                            <div>
+                                Lorem ipsum st 38, </br>
+                                London
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h1>Contact</h1>
+                            <div>
+                                (972) 405 670 45 </br>
+                                lorem@mail.com
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h1>Follow us</h1>
+                            <div>
+                                <div class="social">
+                                    <a target="_blank" href="#"><span class="icon2-Fb_ic"></span></a>
+                                </div>
+                                <div class="social">
+                                    <a target="_blank" href="#"><span class="icon2-In_ic"></span></a>
+                                </div>
+                                <div class="social">
+                                    <a target="_blank" href="#"><span class="icon2-tw_ic"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-items">
+                            <?php wp_nav_menu();?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
             </div>
         </div>
         <div id="home" class="section">
             <div class="container">
                 <div class="maintitle">
-                    <h1>Title</h1>
-                    <div class="subtitle">Subtitle</div>
+                    <h1><?php bloginfo( 'name' ); ?></h1>
+                    <div class="subtitle"><?php bloginfo('description'); ?></div>
                     <div class="icon">
                         <a href="#"><span class="icon2-Arrow_down_ic"></span></a>
                     </div>
@@ -200,7 +283,7 @@
                         <div>
                                 <div class="dark-image">
                                     <div class="con">
-                                        <div class="title">Duis aute irure dolor</div>
+                                        <div class="title">Date</div>
                                         <div class="description">Duis aute irure dolor in volup reprehenderit in voluptate in velit esse cillum dolor involu reprehenderit in voluptatevel esse cillum </div>
                                         <div class="controls">
                                             <div class="date">Date 12.10.17</div>
@@ -282,23 +365,24 @@
                             Follow us
                             <div>
                                 <div class="social">
-                                    <span class="icon2-Fb_ic"></span>
+                                    <a target="_blank" href="#"><span class="icon2-Fb_ic"></span></a>
                                 </div>
                                 <div class="social">
-                                    <span class="icon2-In_ic"></span>
+                                    <a target="_blank" href="#"><span class="icon2-In_ic"></span></a>
                                 </div>
                                 <div class="social">
-                                    <span class="icon2-tw_ic"></span>
+                                    <a target="_blank" href="#"><span class="icon2-tw_ic"></span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="map">
-                    <img src="<?php echo get_template_directory_uri();?>/img/footer_map.png"/>
+                <div style="background-image: url(<?php echo get_template_directory_uri();?>/img/footer_map.png);" class="map">
+
                 </div>
             </div>
         </div>
+        <?php wp_footer() ?>
     </body>
 
 </html>

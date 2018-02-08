@@ -25,7 +25,7 @@ License: Creative license
     font-style: normal;
 }
 
-.logo .icon-swiego_logo span, .lines .icon2-Menu_ic{
+.logo .icon-swiego_logo span, .lines .icon2-Menu_ic, .lines .icon2-Menu_ic-Copy{
     font-size: 30px;
     color: #010101;
     cursor: pointer;
@@ -35,7 +35,6 @@ License: Creative license
     width: 100%;
     z-index: 10;
     background: #ececec;
-    padding: 20px;
 }
 
 .header .logo {
@@ -141,7 +140,7 @@ a {
 }
 .left-menu {
     right: 0;
-    z-index: 2;
+    z-index: 20;
     height: 95px;
     position: fixed;
     top: 0;
@@ -151,15 +150,17 @@ a {
     text-align: center;
 }
 .left-menu .item {
+    padding: 10px;
+}
+.left-menu .item .line {
     height: 3px;
     width: 13px;
     border-radius: 28px;
     background-color: #BEBEBE;
     margin: 5px;
-    margin-top: 35px;
     cursor: pointer;
 }
-.left-menu .active {
+.left-menu .item .active {
     background-color: #2A46E9;
 }
 .container .box {
@@ -206,6 +207,11 @@ ul li {
     border-radius: 6px;
     color: #2A46E9;
     display: inline-block;
+    cursor:pointer;
+}
+.button:hover {
+    background-color: #2A46E9;
+    color: #FFFFFF;
 }
 #news, #questions, #location {
     background: white;
@@ -367,11 +373,12 @@ a:-webkit-any-link {
 .questions .question {
     padding: 15px;
     border-top: 1px solid #979797;
+    cursor: pointer;
 }
 .questions .question:last-child {
     border-bottom: 1px solid #979797;
 }
-.questions .question .hidden {
+.questions .question .hidden, .header .hidden {
     display: none;
 }
 .questions .question .icon-open{
@@ -401,12 +408,15 @@ a:-webkit-any-link {
 #location .container {
     padding-top: 70px;
     text-align: left;
-    height: 220px;
+    height: 700px;
 }
 #location .map {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 120px;
+    overflow: hidden;
+    width: 50%;
+    height: 350px;
 }
 #location .ph {
     margin-top:20px;
@@ -416,13 +426,265 @@ a:-webkit-any-link {
     font-size: 23px;
     font-weight: bold;
 }
-.follow .social {
+.follow .social, .menu-info .social {
     display: inline-block;
     margin-top: 15px;
     margin-right: 15px;
 }
-.follow .social span {
+.follow .social, a .menu-info .social a {
+    color: #636060;
+}
+.follow .social span, .menu-info .social span {
     font-size: 35px;
     border: 1px solid #C7C7C7;
     border-radius: 50%;
+}
+.menu .menu-info, .menu .menu-items {
+    float: left;
+    width: 49%;
+    text-align: left;
+    margin-top: 150px;
+}
+.menu .menu-items {
+    border-left: 1px solid #BEBEBE;
+}
+.menu-info .item {
+    margin-bottom: 40px;
+}
+.menu-info .item div {
+    color: #4E4E4F;
+    font-size: 16px;
+}
+.menu-info .item h1 {
+    color: #2F2F2F;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.menu-items ul li {
+    margin: 40px;
+    list-style: none;
+    display: block;
+    zoom: 1;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Europe;
+}
+.menu-items ul li a {
+    color: #2F2F2F;
+}
+.header .container {
+    padding: 20px;
+}
+.lang {
+    float: right;
+    margin-right: 20px;
+}
+.lang select {
+    border: 2px solid #2F2F2F;
+    background: none;
+    border-radius: 6px;
+    padding: 2px;
+    padding-left: 15px;
+    font-family: 'Segue';
+    padding-right: 15px;
+    font-size: 14px;
+}
+#location .adress {
+    width: 50%;
+}
+@media (min-width: 740px) and (max-width: 1200px) {
+    .container {
+        width: 650px;
+    }
+    .container .box {
+        background: white;
+        padding: 50px;
+    }
+    #news .block .content {
+        padding: 17px;
+        font-size: 15px;
+        height: 210px;
+        margin-right: 20px;
+    }
+    .block .content-image {
+        float: left;
+        width: 162px;
+        margin-left: 10px;
+        font-size: 15px;
+        text-align: left;
+        margin-top: 2px;
+    }
+    #news .block .rowthree>div:nth-child(2) {
+        width: 70%;
+        float: left;
+    }
+    #news .block .rowthree>div:nth-child(1) {
+        width: 30%;
+        float: left;
+        margin-right: 0px;
+    }
+    .block .dark-image {
+        margin-left: 20px;
+        height: 210px;
+        float: left;
+        background: #121111;
+        color: #F5F5F5;
+        width: 170px;
+        text-align: left;
+        padding: 17px;
+        font-size: 15px;
+    }
+    .block .image {
+        width: 230px;
+    }
+    .menu-items ul li {
+        font-size: 40px;
+    }
+    .section .maintitle {
+        height: 150px;
+    }
+    #location .container {
+        width: 600px;
+    }
+}
+@media (max-width: 740px) {
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: auto;
+    }
+    #news .block .rowleft>div:nth-child(1) {
+        width: 100%;
+        float: none;
+    }
+    #news .block .rowleft>div:nth-child(2) {
+        width: 100%;
+        float: none;
+    }
+    .block .image {
+        width: 100%;
+        float: none;
+    }
+    .block .content-image {
+        float: none;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 20px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    #news .block .rowthree>div:nth-child(1) {
+        width: 100%;
+        float: none;
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    #news .block .rowthree>div:nth-child(2) {
+        width: 100%;
+        float: none;
+    }
+    .block .dark-image {
+        padding: 0px;
+        height: auto;
+        float: none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    #news .block .content {
+        height: auto;
+    }
+    .dark-image .con {
+        padding: 20px;
+    }
+    .section .about-title {
+        position: unset;
+        margin-left: 0px;
+        height:auto;
+    }
+    .container .box {
+        padding: 20px;
+    }
+    .about-title .subtitle, .classic-title .subtitle {
+        text-align: center;
+    }
+    .box .text {
+        float: none;
+        width: auto;
+        text-align: left;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .classic-title {
+        text-align: center;
+        margin-left: 0px;
+        margin-bottom: 15px;
+    }
+    #price .item {
+        width: 100%;
+        float: none;
+    }
+    #price .container {
+        height: auto;
+    }
+    #news, #questions, #location {
+        padding-top: 50px;
+    }
+    #location .map {
+        height: 340px;
+        position: unset;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+    .follow .social, .menu-info .social {
+        margin-right: 10px;
+    }
+    #location .adress {
+        width: 100%;
+        text-align: center;
+    }
+    #location .container {
+        padding-top: 20px;
+        height: auto;
+    }
+    #location .classic-title {
+        position: unset;
+    }
+    body, html {
+        font-size: 15px;
+    }
+    .menu-items ul li, .menu-info .item h1 {
+        font-size: 20px;
+        border-bottom: 1px solid #BEBEBE;
+        padding-bottom: 10px;
+    }
+    .menu .menu-info, .menu .menu-items {
+        float: none;
+        width: 100%;
+    }
+    .menu .menu-info
+    {
+        display: none;
+    }
+    .menu .menu-items {
+        border-left: none;
+        margin-top: 50px;
+    }
+    .questions .question .title {
+        float: none;
+        margin-left: 0px;
+    }
+    .questions .question .icon {
+        float: none;
+    }
+    .left-menu {
+        display: none;
+    }
+    .logo .icon-swiego_logo span, .lines .icon2-Menu_ic, .lines .icon2-Menu_ic-Copy {
+        font-size: 22px;
+    }
 }

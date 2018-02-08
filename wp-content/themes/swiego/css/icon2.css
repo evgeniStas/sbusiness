@@ -31,9 +31,11 @@
 }
 .icon2-Fb_ic:before {
     content: "\e902";
+    color: #636060;
 }
 .icon2-In_ic:before {
     content: "\e903";
+    color: #636060;
 }
 .icon2-Location_ic:before {
     content: "\e904";
