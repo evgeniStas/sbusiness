@@ -1,0 +1,428 @@
+/*
+Theme Name: Small Business Swiego
+Theme URI: http://swiego.com
+Author: Evgeni Stas
+Description: Swiego Small Business
+Version: 1.0
+License: Creative license
+*/
+@import "css/icon.css";
+@import "css/icon2.css";
+@import "css/Glyphter.css";
+
+@font-face{
+    font-family: 'Europe';
+    src: url('fonts/europe.ttf');
+    url('css/font/europe.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Segue';
+    src: url('fonts/Segue.ttf');
+    url('css/font/Segue.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logo .icon-swiego_logo span, .lines .icon2-Menu_ic{
+    font-size: 30px;
+    color: #010101;
+    cursor: pointer;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: #ececec;
+    padding: 20px;
+}
+
+.header .logo {
+    float: left;
+}
+.header .lines {
+    float: right;
+}
+h1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 60px;
+    font-family: 'Europe';
+}
+h2 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 6px;
+    font-family: 'Europe';
+}
+.subtitle {
+    font-size: 30px;
+}
+
+html,body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    font-family: 'Segue';
+    color: #494949;
+    background: #ececec;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.row:after, .container:after, .box:after, #news .block .rowleft:after, #news .block .rowright:after, #news .controls:after, .block .content:after, #news .block .rowthree:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cover .img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: #333;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+.section {
+    position: relative;
+    padding-top: 100px;
+}
+#home {
+    padding: 0px;
+}
+.section .maintitle {
+    color: white;
+    left: 0px;
+    background: #304FFE;
+    z-index: 2;
+    height: 95px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    padding: 30px;
+    padding-left: 2.8%;
+    width: 50%;
+    text-align: left;
+}
+.section .about-title {
+    left: 0px;
+    z-index: 2;
+    height: 95px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    padding: 30px;
+    margin-left: -65px;
+    color: #2F2F2F;
+}
+.maintitle .icon span {
+    font-size: 55px;
+    border: 3px solid #304ffe;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.maintitle .icon {
+    position: absolute;
+    bottom: -100px;
+    left: 25%;
+}
+a {
+    text-decoration: none;
+}
+.left-menu {
+    right: 0;
+    z-index: 2;
+    height: 95px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    margin-right: 2%;
+    text-align: center;
+}
+.left-menu .item {
+    height: 3px;
+    width: 13px;
+    border-radius: 28px;
+    background-color: #BEBEBE;
+    margin: 5px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+.left-menu .active {
+    background-color: #2A46E9;
+}
+.container .box {
+    background: white;
+    padding: 150px;
+}
+.about-title .subtitle, .classic-title .subtitle {
+    text-align: left;
+    color: #9C9C9C;
+}
+.box .text {
+    float: right;
+    width: 60%;
+    text-align: left;
+}
+.classic-title {
+    text-align: left;
+    margin-left: -2.8%;
+    margin-bottom: 50px;
+}
+#price .item {
+    width: 33.33333%;
+    float: left;
+}
+#price .item .card {
+    background-color: #FFFFFF;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0px 12px 40px -25px #000000;
+}
+#price .item .card .title {
+    color: #2A46E9;
+    font-size: 23px;
+    font-weight: bold;
+}
+ul li {
+    text-align: left;
+}
+.button {
+    padding: 9px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border: 2px solid #304FFE;
+    border-radius: 6px;
+    color: #2A46E9;
+    display: inline-block;
+}
+#news, #questions, #location {
+    background: white;
+    padding-top: 150px;
+}
+#news .content
+{
+    text-align: left;
+}
+#news .block .content
+{
+    padding: 30px;
+    height: 185px;
+}
+#news .block .rowleft>div:nth-child(1)
+{
+    width:70%;
+    float: left;
+}
+#news .block .rowleft>div:nth-child(2)
+{
+    width:30%;
+    float: left;
+}
+#news .block .rowright>div:nth-child(1)
+{
+    width:70%;
+    float: right;
+}
+#news .block .rowright>div:nth-child(2)
+{
+    width:30%;
+    float: right;
+}
+#news .block .rowthree>div:nth-child(1)
+{
+    width: 265px;
+    float: left;
+    margin-right: 40px;
+}
+#news .block .rowthree>div:nth-child(2)
+{
+    width: 855px;
+    float: left;
+}
+#news .block .title {
+    font-size: 23px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+#news .block .controls {
+    margin-top: 15px;
+}
+#news .block .controls .date {
+    font-size: 12px;
+    float: left;
+}
+#news .block .controls .link {
+    font-size: 14px;
+    float: right;
+}
+#news .block .blue .controls .link a, #news .block .dark .controls .link a {
+    color:#FCFCFC;
+}
+#news .block .controls .title {
+    color:#2A46E9;
+}
+#news .block .title {
+    color:#2A46E9;
+}
+#news .block .blue {
+    background: #304FFE;
+    color:#F5F5F5;
+}
+#news .block .dark {
+    background: #121111;
+    color:#F5F5F5;
+}
+#news .block .blue .title {
+    color:#F5F5F5;
+}
+#news .block .blue .link span, #news .block .dark .link span {
+    color:#F5F5F5;
+}
+#news .block .blue .icon2-Arrow-right:before, #news .block .dark .icon2-Arrow-right:before, .block .dark-image .icon2-Arrow-right:before {
+    content: "\e901";
+    color: #f5f5f5;
+}
+.rowleft, .rowright {
+    margin-bottom: 25px;
+}
+#news .block .rowright>div:nth-child(1)
+{
+    width:30%;
+    float: left;
+}
+#news .block .rowright>div:nth-child(2)
+{
+    width:70%;
+    float: left;
+}
+#news .block .dark .title {
+    color: #f5f5f5;
+}
+a:-webkit-any-link {
+    color: #2A46E9;
+    cursor: pointer;
+    text-decoration: none;
+}
+.block .image {
+    width: 250px;
+    float: left;
+}
+.block .content-image {
+    float: left;
+    width: 480px;
+    margin-left: 50px;
+    margin-top: 40px;
+    text-align: left;
+}
+.container {
+    width: 1160px;
+    position: relative;
+}
+.block .image .photo {
+    overflow: hidden;
+    height: 245px;
+}
+.block .dark-image {
+    padding: 30px;
+    height: 185px;
+    float: left;
+    background: #121111;
+    color: #F5F5F5;
+    width: 545px;
+    text-align: left;
+}
+.block .dark-image .title, .block .dark-image .controls .link a {
+    color: #f5f5f5!important;
+}
+.questions {
+    text-align: left;
+    font-size: 16px;
+    color: #494949;
+}
+.questions .question .icon {
+    font-weight: bold;
+    font-size: 19px;
+    color: #4E4E4F;
+    letter-spacing: 1px;
+    cursor: pointer;
+    float: left;
+}
+.questions .question .title {
+    float: left;
+    margin-left: 20px;
+    line-height: 28px;
+}
+.questions .question {
+    padding: 15px;
+    border-top: 1px solid #979797;
+}
+.questions .question:last-child {
+    border-bottom: 1px solid #979797;
+}
+.questions .question .hidden {
+    display: none;
+}
+.questions .question .icon-open{
+    color: #304FFE;
+}
+.clear {
+    content: "";
+    display: block;
+    clear: both;
+}
+.questions .question .desc {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+#price .container {
+    height: 360px;
+    z-index: 2;
+}
+#location .classic-title
+{
+    position: absolute;
+    top: -30px;
+}
+#location>div {
+    background: #ececec;
+}
+#location .container {
+    padding-top: 70px;
+    text-align: left;
+    height: 220px;
+}
+#location .map {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+#location .ph {
+    margin-top:20px;
+}
+.follow {
+    margin-top:35px;
+    font-size: 23px;
+    font-weight: bold;
+}
+.follow .social {
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.follow .social span {
+    font-size: 35px;
+    border: 1px solid #C7C7C7;
+    border-radius: 50%;
+}

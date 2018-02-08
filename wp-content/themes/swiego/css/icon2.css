@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'icomoon2';
+    src:  url('../fonts2/icomoon.eot?s80fms');
+    src:  url('../fonts2/icomoon.eot?s80fms#iefix') format('embedded-opentype'),
+    url('../fonts2/icomoon.ttf?s80fms') format('truetype'),
+    url('../fonts2/icomoon.woff?s80fms') format('woff'),
+    url('../fonts2/icomoon.svg?s80fms#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon2-"], [class*=" icon2-"] {
+    font-family: 'icomoon2' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon2-Arrow_down_ic:before {
+    content: "\e900";
+    color: #2a47ea;
+}
+.icon2-Arrow-right:before {
+    content: "\e901";
+    color: #2a46e9;
+}
+.icon2-Fb_ic:before {
+    content: "\e902";
+}
+.icon2-In_ic:before {
+    content: "\e903";
+}
+.icon2-Location_ic:before {
+    content: "\e904";
+    color: #304ffe;
+}
+.icon2-Menu_ic:before {
+    content: "\e905";
+}
+.icon2-Menu_ic-Copy:before {
+    content: "\e906";
+    color: #4d4e4e;
+}
+.icon2-tw_ic:before {
+    content: "\e907";
+    color: #636060;
+}
