@@ -1,11 +1,4 @@
-/*
-Theme Name: Small Business Swiego
-Theme URI: http://swiego.com
-Author: Evgeni Stas
-Description: Swiego Small Business
-Version: 1.0
-License: Creative license
-*/
+
 @import "css/icon.css";
 @import "css/icon2.css";
 @import "css/Glyphter.css";
@@ -13,15 +6,15 @@ License: Creative license
 @font-face{
     font-family: 'Europe';
     src: url('fonts/europe.ttf');
-    url('css/font/europe.ttf') format('truetype'),
-    font-weight: normal;
+url('css/font/europe.ttf') format('truetype'),
+font-weight: normal;
     font-style: normal;
 }
 @font-face{
     font-family: 'Segue';
     src: url('fonts/Segue.ttf');
-    url('css/font/Segue.ttf') format('truetype'),
-    font-weight: normal;
+url('css/font/Segue.ttf') format('truetype'),
+font-weight: normal;
     font-style: normal;
 }
 
@@ -38,10 +31,10 @@ License: Creative license
 }
 
 .header .logo {
-    float: left;
+    float: right;
 }
 .header .lines {
-    float: right;
+    float: left;
 }
 h1 {
     padding: 0px;
@@ -70,8 +63,8 @@ html,body {
 }
 
 .container {
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 .row:after, .container:after, .box:after, #news .block .rowleft:after, #news .block .rowright:after, #news .controls:after, .block .content:after, #news .block .rowthree:after, .control-links:after {
@@ -99,7 +92,7 @@ html,body {
 }
 .section .maintitle {
     color: white;
-    left: 0px;
+    right: 0px;
     background: #304FFE;
     z-index: 2;
     height: 95px;
@@ -108,12 +101,12 @@ html,body {
     bottom: 0;
     margin: auto 0;
     padding: 30px;
-    padding-left: 2.8%;
+    padding-right: 2.8%;
     width: 50%;
-    text-align: left;
+    text-align: right;
 }
 .section .about-title {
-    left: 0px;
+    right: 0px;
     z-index: 2;
     height: 95px;
     position: absolute;
@@ -121,12 +114,12 @@ html,body {
     bottom: 0;
     margin: auto 0;
     padding: 30px;
-    margin-left: -65px;
+    margin-right: -65px;
     color: #2F2F2F;
 }
 #view .title {
     width: 40%;
-    float: left;
+    float: right;
     padding: 0px;
     margin: 0px;
     font-weight: bold;
@@ -143,20 +136,20 @@ html,body {
 .maintitle .icon {
     position: absolute;
     bottom: -100px;
-    left: 25%;
+    right: 25%;
 }
 a {
     text-decoration: none;
 }
 .left-menu {
-    right: 0;
+    left: 0;
     z-index: 20;
     height: 95px;
     position: fixed;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    margin-right: 2%;
+    margin-left: 2%;
     text-align: center;
 }
 .left-menu .item {
@@ -178,25 +171,25 @@ a {
     padding: 150px;
 }
 .about-title .subtitle, .classic-title .subtitle {
-    text-align: left;
+    text-align: right;
     color: #9C9C9C;
 }
 #view .box {
     padding: 60px;
 }
 .box .text {
-    float: right;
+    float: left;
     width: 60%;
-    text-align: left;
+    text-align: right;
 }
 .classic-title {
-    text-align: left;
-    margin-left: -2.8%;
+    text-align: right;
+    margin-right: -2.8%;
     margin-bottom: 50px;
 }
 #price .item {
     width: 33.33333%;
-    float: left;
+    float: right;
 }
 #price .item .card {
     background-color: #FFFFFF;
@@ -210,12 +203,12 @@ a {
     font-weight: bold;
 }
 ul li {
-    text-align: left;
+    text-align: right;
 }
 .button {
     padding: 9px;
-    padding-left: 18px;
     padding-right: 18px;
+    padding-left: 18px;
     border: 2px solid #304FFE;
     border-radius: 6px;
     color: #2A46E9;
@@ -232,7 +225,7 @@ ul li {
 }
 #news .content
 {
-    text-align: left;
+    text-align: right;
 }
 #news .block .content
 {
@@ -242,33 +235,33 @@ ul li {
 #news .block .rowleft>div:nth-child(1)
 {
     width:70%;
-    float: left;
+    float: right;
 }
 #news .block .rowleft>div:nth-child(2)
 {
     width:30%;
-    float: left;
+    float: right;
 }
 #news .block .rowright>div:nth-child(1)
 {
     width:70%;
-    float: right;
+    float: left;
 }
 #news .block .rowright>div:nth-child(2)
 {
     width:30%;
-    float: right;
+    float: left;
 }
 #news .block .rowthree>div:nth-child(1)
 {
     width: 265px;
-    float: left;
-    margin-right: 40px;
+    float: right;
+    margin-left: 40px;
 }
 #news .block .rowthree>div:nth-child(2)
 {
     width: 855px;
-    float: left;
+    float: right;
 }
 #news .block .title {
     font-size: 23px;
@@ -280,11 +273,11 @@ ul li {
 }
 #news .block .controls .date {
     font-size: 12px;
-    float: left;
+    float: right;
 }
 #news .block .controls .link {
     font-size: 14px;
-    float: right;
+    float: left;
 }
 #news .block .blue .controls .link a, #news .block .dark .controls .link a {
     color:#FCFCFC;
@@ -319,12 +312,12 @@ ul li {
 #news .block .rowright>div:nth-child(1)
 {
     width:30%;
-    float: left;
+    float: right;
 }
 #news .block .rowright>div:nth-child(2)
 {
     width:70%;
-    float: left;
+    float: right;
 }
 #news .block .dark .title {
     color: #f5f5f5;
@@ -336,14 +329,14 @@ a:-webkit-any-link {
 }
 .block .image {
     width: 250px;
-    float: left;
+    float: right;
 }
 .block .content-image {
-    float: left;
+    float: right;
     width: 480px;
-    margin-left: 50px;
+    margin-right: 50px;
     margin-top: 40px;
-    text-align: left;
+    text-align: right;
 }
 .container {
     width: 1160px;
@@ -356,17 +349,17 @@ a:-webkit-any-link {
 .block .dark-image {
     padding: 30px;
     height: 185px;
-    float: left;
+    float: right;
     background: #121111;
     color: #F5F5F5;
     width: 545px;
-    text-align: left;
+    text-align: right;
 }
 .block .dark-image .title, .block .dark-image .controls .link a {
     color: #f5f5f5!important;
 }
 .questions {
-    text-align: left;
+    text-align: right;
     font-size: 16px;
     color: #494949;
 }
@@ -376,11 +369,11 @@ a:-webkit-any-link {
     color: #4E4E4F;
     letter-spacing: 1px;
     cursor: pointer;
-    float: left;
+    float: right;
 }
 .questions .question .title {
-    float: left;
-    margin-left: 20px;
+    float: right;
+    margin-right: 20px;
     line-height: 28px;
 }
 .questions .question {
@@ -420,12 +413,12 @@ a:-webkit-any-link {
 }
 #location .container {
     padding-top: 70px;
-    text-align: left;
+    text-align: right;
     height: 700px;
 }
 #location .map {
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0px;
     overflow: hidden;
     width: 50%;
@@ -445,7 +438,7 @@ a:-webkit-any-link {
 .follow .social, .menu-info .social {
     display: inline-block;
     margin-top: 15px;
-    margin-right: 15px;
+    margin-left: 15px;
 }
 .follow .social, a .menu-info .social a {
     color: #636060;
@@ -456,13 +449,13 @@ a:-webkit-any-link {
     border-radius: 50%;
 }
 .menu .menu-info, .menu .menu-items {
-    float: left;
+    float: right;
     width: 49%;
-    text-align: left;
+    text-align: right;
     margin-top: 150px;
 }
 .menu .menu-items {
-    border-left: 1px solid #BEBEBE;
+    border-right: 1px solid #BEBEBE;
 }
 .menu-info .item {
     margin-bottom: 40px;
@@ -492,17 +485,17 @@ a:-webkit-any-link {
     padding: 20px;
 }
 .lang {
-    float: right;
-    margin-right: 20px;
+    float: left;
+    margin-left: 20px;
 }
 .lang select {
     border: 2px solid #2F2F2F;
     background: none;
     border-radius: 6px;
     padding: 2px;
-    padding-left: 15px;
-    font-family: 'Segue';
     padding-right: 15px;
+    font-family: 'Segue';
+    padding-left: 15px;
     font-size: 14px;
 }
 #location .adress {
@@ -527,33 +520,33 @@ a:-webkit-any-link {
         padding: 17px;
         font-size: 15px;
         height: 210px;
-        margin-right: 20px;
+        margin-left: 20px;
     }
     .block .content-image {
-        float: left;
+        float: right;
         width: 162px;
-        margin-left: 10px;
+        margin-right: 10px;
         font-size: 15px;
-        text-align: left;
+        text-align: right;
         margin-top: 2px;
     }
     #news .block .rowthree>div:nth-child(2) {
         width: 70%;
-        float: left;
+        float: right;
     }
     #news .block .rowthree>div:nth-child(1) {
         width: 30%;
-        float: left;
-        margin-right: 0px;
+        float: right;
+        margin-left: 0px;
     }
     .block .dark-image {
-        margin-left: 20px;
+        margin-right: 20px;
         height: 210px;
-        float: left;
+        float: right;
         background: #121111;
         color: #F5F5F5;
         width: 170px;
-        text-align: left;
+        text-align: right;
         padding: 17px;
         font-size: 15px;
     }
@@ -572,10 +565,10 @@ a:-webkit-any-link {
 }
 @media (max-width: 740px) {
     .container {
-        margin-right: auto;
         margin-left: auto;
-        padding-left: 15px;
+        margin-right: auto;
         padding-right: 15px;
+        padding-left: 15px;
         width: auto;
     }
     #news .block .rowleft>div:nth-child(1) {
@@ -593,15 +586,15 @@ a:-webkit-any-link {
     .block .content-image {
         float: none;
         width: 100%;
-        margin-left: 0px;
+        margin-right: 0px;
         margin-top: 20px;
-        text-align: left;
+        text-align: right;
         margin-bottom: 20px;
     }
     #news .block .rowthree>div:nth-child(1) {
         width: 100%;
         float: none;
-        margin-right: 0px;
+        margin-left: 0px;
         margin-bottom: 20px;
     }
     #news .block .rowthree>div:nth-child(2) {
@@ -613,7 +606,7 @@ a:-webkit-any-link {
         height: auto;
         float: none;
         width: 100%;
-        text-align: left;
+        text-align: right;
         margin-bottom: 20px;
     }
     #news .block .content {
@@ -624,12 +617,12 @@ a:-webkit-any-link {
     }
     .section .about-title {
         position: unset;
-        margin-left: 0px;
+        margin-right: 0px;
         height:auto;
     }
     #view .title {
         position: unset;
-        margin-left: 0px;
+        margin-right: 0px;
         height:auto;
         width:100%;
         float:none;
@@ -647,14 +640,14 @@ a:-webkit-any-link {
     .box .text {
         float: none;
         width: auto;
-        text-align: left;
+        text-align: right;
     }
     h1 {
         font-size: 40px;
     }
     .classic-title {
         text-align: center;
-        margin-left: 0px;
+        margin-right: 0px;
         margin-bottom: 15px;
     }
     #price .item {
@@ -675,7 +668,7 @@ a:-webkit-any-link {
         margin-bottom: 100px;
     }
     .follow .social, .menu-info .social {
-        margin-right: 10px;
+        margin-left: 10px;
     }
     #location .adress {
         width: 100%;
@@ -705,12 +698,12 @@ a:-webkit-any-link {
         display: none;
     }
     .menu .menu-items {
-        border-left: none;
+        border-right: none;
         margin-top: 50px;
     }
     .questions .question .title {
         float: none;
-        margin-left: 0px;
+        margin-right: 0px;
     }
     .questions .question .icon {
         float: none;
@@ -723,17 +716,17 @@ a:-webkit-any-link {
     }
 }
 .publishet {
-    text-align: right;
+    text-align: left;
     margin-bottom: 10px;
 }
 .control-links {
     margin: 20px;
 }
 .control-links .left {
-    float:left;
+    float:right;
 }
 .control-links .right {
-    float:right;
+    float:left;
 }
 #news .description {
     height: 120px;

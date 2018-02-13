@@ -5,11 +5,17 @@
  * Date: 06.02.18
  * Time: 16:54
  */
-//setlocale(LC_MONETARY, 'ru_RU');
+$id_page = 51;
 ?>
 <html <?php language_attributes(); ?>>
     <head>
+        <?php if(get_locale() == "en_US"){?>
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" />
+        <?php }else{ ?>
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/rtl.css"/>
+            <?php
+        }
+        ?>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="<?php echo get_template_directory_uri();?>/js/main.js"></script>
         <?php wp_head(); ?>
@@ -50,9 +56,11 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
+                    <a href="<?php echo get_site_url();?>">
                     <span class="icon-swiego_logo">
                         <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span>
                     </span>
+                    </a>
                 </div>
                 <div class="lines">
                     <span class="icon2-Menu_ic"></span>
@@ -60,15 +68,18 @@
                 <div class="lang">
                     <select id="lang-select">
                     <?php
-
                     $translations = pll_the_languages(array('raw'=>1));
                     foreach($translations as $lang){
                         $lang["locale"] = str_replace("-","_", $lang["locale"]);
                         $selected ="";
                         if($lang["locale"] == get_locale()) {
                             $selected="selected";
+                            if(get_locale() == "en_US"){
+                                $id_page = 51;
+                            }else{
+                                $id_page = 53;
+                            }
                         }
-                        echo $lang["locale"]." vs ".get_locale();
                         ?>
                         <option <?php echo $selected;?> data-url="<?php echo $lang["url"];?>"><?php echo $lang["name"];?></option>
                         <?php
@@ -81,31 +92,34 @@
                 <div class="menu hidden">
                     <div class="menu-info">
                         <div class="item">
-                            <h1>Location</h1>
+                            <h1><?php  the_field("location_text", $id_page); ?></h1>
                             <div>
-                                Lorem ipsum st 38, </br>
-                                London
+                                <?php  the_field("location", $id_page); ?>
                             </div>
                         </div>
                         <div class="item">
-                            <h1>Contact</h1>
+                            <h1><?php  the_field("contact_text", $id_page); ?></h1>
                             <div>
-                                (972) 405 670 45 </br>
-                                lorem@mail.com
+                                <?php  the_field("contact", $id_page); ?>
                             </div>
                         </div>
                         <div class="item">
-                            <h1>Follow us</h1>
+                            <h1><?php  the_field("follow_us_text", $id_page); ?></h1>
                             <div>
-                                <div class="social">
-                                    <a target="_blank" href="#"><span class="icon2-Fb_ic"></span></a>
-                                </div>
-                                <div class="social">
-                                    <a target="_blank" href="#"><span class="icon2-In_ic"></span></a>
-                                </div>
-                                <div class="social">
-                                    <a target="_blank" href="#"><span class="icon2-tw_ic"></span></a>
-                                </div>
+                                <?php
+                                $args = array(  'post_type'=> 'social', 'posts_per_page' => -1);
+                                $Social = get_posts( $args );
+                                wp_reset_postdata();
+                                foreach( $Social as $item ) {
+                                    setup_postdata($item);
+                                    $meta_values = get_post_meta( $item->ID );
+                                    ?>
+                                    <div class="social">
+                                        <a target="_blank" href="<?php echo $meta_values["link"][0];?>"><?php echo $meta_values["icon"][0];?></a>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -119,8 +133,8 @@
         <div id="home" class="section">
             <div class="container">
                 <div class="maintitle">
-                    <h1><?php bloginfo( 'name' ); ?></h1>
-                    <div class="subtitle"><?php bloginfo('description'); ?></div>
+                    <h1><?php  the_field("title", $id_page); ?></h1>
+                    <div class="subtitle"><?php  the_field("subtitle", $id_page); ?></div>
                     <div class="icon">
                         <a href="#"><span class="icon2-Arrow_down_ic"></span></a>
                     </div>
@@ -134,11 +148,11 @@
             <div class="container">
                 <div class="box">
                     <div class="about-title">
-                        <h1>About Us</h1>
-                        <div class="subtitle">Subtitle</div>
+                        <h1><?php  the_field("about_us_text", $id_page); ?></h1>
+                        <div class="subtitle"><?php  the_field("about_us_subtitle", $id_page); ?></div>
                     </div>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        <?php  the_field("about_us_full_text", $id_page); ?>
                     </div>
                 </div>
             </div>
@@ -146,58 +160,38 @@
         <div id="price" class="section">
             <div class="container">
                 <div class="classic-title">
-                    <h1>Price</h1>
-                    <div class="subtitle">Subtitle</div>
+                    <h1><?php  the_field("price_text", $id_page); ?></h1>
+                    <div class="subtitle"><?php  the_field("price_subtitle", $id_page); ?></div>
                 </div>
                 <div class="block">
-                    <div class="item">
-                        <div class="card">
-                            <div class="title">Premium</div>
-                            <div class="desc">
-                                <ul>
-                                    <li>ed</li>
-                                    <li>do</li>
-                                    <li>ed</li>
-                                    <li>ed</li>
-                                </ul>
-                            </div>
-                            <div class="controll">
-                                <div class="button">Book it now</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card">
-                            <div class="title">Premium</div>
-                            <div class="desc">
-                                <ul>
-                                    <li>ed</li>
-                                    <li>do</li>
-                                    <li>ed</li>
-                                    <li>ed</li>
-                                </ul>
-                            </div>
-                            <div class="controll">
-                                <div class="button">Book it now</div>
+
+                    <?php
+                    global $post;
+                    $tmp_post = $post;
+                    $args = array(  'post_type'=> 'price', 'order' => 'ASC');
+                    $prices = get_posts( $args );
+                    wp_reset_postdata();
+
+                    foreach( $prices as $item ) {
+                        setup_postdata($item);
+                        ?>
+                        <div class="item">
+                            <div class="card">
+                                <div class="title"><?php echo $item->post_title; ?></div>
+                                <div class="desc">
+                                    <ul>
+                                        <?php echo $item->post_content; ?>
+                                    </ul>
+                                </div>
+                                <div class="controll">
+                                    <div class="button"><?php  the_field("book_it_now", $id_page); ?></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="card">
-                            <div class="title">Premium</div>
-                            <div class="desc">
-                                <ul>
-                                    <li>ed</li>
-                                    <li>do</li>
-                                    <li>ed</li>
-                                    <li>ed</li>
-                                </ul>
-                            </div>
-                            <div class="controll">
-                                <div class="button">Book it now</div>
-                            </div>
-                        </div>
-                    </div>
+                        <?php
+                        $post = $tmp_post;
+                    }
+                    ?>
                 </div>
 
             </div>
@@ -205,148 +199,173 @@
         <div id="news" class="section">
             <div class="container">
                 <div class="classic-title">
-                    <h1>News</h1>
-                    <div class="subtitle">Subtitle</div>
+                    <h1><?php  the_field("news_text", $id_page); ?></h1>
+                    <div class="subtitle"><?php  the_field("news_subtitle", $id_page); ?></div>
                 </div>
                 <div class="block">
                     <div class="rowleft">
-                        <div class="blue">
-                            <div class="content">
-                                <div class="title">Title</div>
-                                <div class="description">Duis aute irure dolor in reprehenderit in voluptate velit es-se cillum dolor in reprehenderit in voluptate velit esse cill-um enim ad minim veniam, quis nostrud exercitation ullam
-                                    co laboris nisi enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </div>
-                                <div class="controls">
-                                    <div class="date">Date 12.10.17</div>
-                                    <div class="link"><a href="#">Read more <span class="icon2-Arrow-right"></span></a></div>
+                        <?php
+                        $args = array(  'post_type'=> 'news', 'order' => 'ASC', 'posts_per_page' => 2, 'offset'=> 0);
+                        $news = get_posts( $args );
+                        wp_reset_postdata();
+                        $i = 0;
+                        foreach( $news as $item ) {
+                            setup_postdata($item);
+                            ?>
+                            <div <?php if($i == 0){echo "class='blue'";}?>>
+                                <div class="content">
+                                    <div class="title"><?php echo $item->post_title; ?></div>
+                                    <div class="description"><?php echo $item->post_content; ?></div>
+                                    <div class="controls">
+                                        <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
+                                        <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="content">
-                                <div class="title">Friday, 15.02</div>
-                                <div class="description">Tolor in reprehenderit in voluptate velit essllitenim ad minim veniavel</div>
-                                <div class="controls">
-                                    <div class="date"></div>
-                                    <div class="link"><a href="#">Read more <span class="icon2-Arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
+                            <?php
+                            $i++;
+                        }
+                        ?>
                     </div>
                     <div class="rowleft">
-                        <div>
-                            <div>
-                                <div class="image">
-                                    <div class="photo">
-                                        <img src="<?php echo get_template_directory_uri();?>/img/news_photo_01.png"/>
-                                    </div>
-                                </div>
-                                <div class="content-image">
-                                    <div class="con">
-                                        <div class="title">Duis aute irure dolor</div>
-                                        <div class="description">Duis aute irure dolor in volup reprehenderit in voluptate in velit esse cillum dolor involu reprehenderit in voluptatevel esse cillum </div>
-                                        <div class="controls">
-                                            <div class="date">Date 12.10.17</div>
-                                            <div class="link"><a href="#">Read more <span class="icon2-Arrow-right"></span></a></div>
+                        <?php
+                        $args = array(  'post_type'=> 'news', 'order' => 'ASC', 'posts_per_page' => 2, 'offset'=> 2);
+                        $news = get_posts( $args );
+                        wp_reset_postdata();
+                        $i = 0;
+                        foreach( $news as $item ) {
+                            setup_postdata($item);
+                            if($i == 0){
+                                $img = get_field('photo', $item->ID)["url"];
+                                //var_dump($item);
+                                ?>
+                                <div>
+                                    <div>
+                                        <?php if($img){?>
+                                        <div class="image">
+                                            <div class="photo">
+                                                <img src="<?php echo $img;?>"/>
+                                            </div>
+                                        </div>
+                                    <?php }?>
+                                        <div class="content-image">
+                                            <div class="con">
+                                                <div class="title"><?php echo $item->post_title; ?></div>
+                                                <div class="description"><?php echo $item->post_content; ?></div>
+                                                <div class="controls">
+                                                    <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
+                                                    <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="dark">
-                            <div class="content">
-                                <div class="title">Friday, 15.02</div>
-                                <div class="description">Duis aute irure dolor in reprehenderit in volup
-                                    tate velit esse cillum
-                                    dolor in reprehenderit
-                                    in voluptate velit  </div>
-                                <div class="controls">
-                                    <div class="date">Date 12.10.17</div>
-                                    <div class="link"><a href="#">Read more <span class="icon2-Arrow-right"></span></a></div>
+                                <?php
+                            }else {
+                                ?>
+                                <div class="dark">
+                                    <div class="content">
+                                        <div class="title"><?php echo $item->post_title; ?></div>
+                                        <div class="description"><?php echo $item->post_content; ?></div>
+                                        <div class="controls">
+                                            <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
+                                            <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                                <?php
+                            }
+                            $i++;
+                        }
+                        ?>
                     </div>
                     <div class="rowthree">
-                        <div class="blue">
-                            <div class="content">
-                                <div class="title">Friday, 15.02</div>
-                                <div class="description">Duis aute irure dolor in reprehenderit in volup
-                                    tate velit esse cillum
-                                    dolor in reprehenderit
-                                    in voluptate velit  </div>
-                                <div class="controls">
-                                    <div class="date">Date 12.10.17</div>
-                                    <div class="link"><a href="#">Read more <span class="icon2-Arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                                <div class="dark-image">
-                                    <div class="con">
-                                        <div class="title">Date</div>
-                                        <div class="description">Duis aute irure dolor in volup reprehenderit in voluptate in velit esse cillum dolor involu reprehenderit in voluptatevel esse cillum </div>
+                        <?php
+                        $args = array(  'post_type'=> 'news', 'order' => 'ASC', 'posts_per_page' => 2, 'offset'=> 4);
+                        $news = get_posts( $args );
+                        wp_reset_postdata();
+                        $i = 0;
+                        foreach( $news as $item ) {
+                            setup_postdata($item);
+                            if($i == 0){
+                                ?>
+                                <div class="blue">
+                                    <div class="content">
+                                        <div class="title"><?php echo $item->post_title; ?></div>
+                                        <div class="description">
+                                            <?php echo $item->post_content; ?>
+                                        </div>
                                         <div class="controls">
-                                            <div class="date">Date 12.10.17</div>
-                                            <div class="link"><a href="#">Read more <span class="icon2-Arrow-right"></span></a></div>
+                                            <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
+                                            <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="image">
-                                    <div class="photo">
-                                        <img src="<?php echo get_template_directory_uri();?>/img/news_photo_02.png"/>
+                                <?php
+                            }else{
+                                $img = get_field('photo', $item->ID)["url"];
+                                ?>
+                                <div>
+                                    <div class="dark-image">
+                                        <div class="con">
+                                            <div class="title"><?php echo $item->post_title; ?></div>
+                                            <div class="description">
+                                                <?php echo $item->post_content; ?>
+                                            </div>
+                                            <div class="controls">
+                                                <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
+                                                <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?><span class="icon2-Arrow-right"></span></a></div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <?php if($img){?>
+                                        <div class="image">
+                                            <div class="photo">
+                                                <img src="<?php echo $img;?>"/>
+                                            </div>
+                                        </div>
+                                    <?php }?>
                                 </div>
-                        </div>
+                                <?php
+                            }
+                            $i++;
+                        }
+                            ?>
                     </div>
-
                 </div>
             </div>
         </div>
         <div id="questions" class="section">
             <div class="container">
                 <div class="classic-title">
-                    <h1>Questions</h1>
-                    <div class="subtitle">Subtitle</div>
+                    <h1><?php  the_field("questions_text", $id_page); ?></h1>
+                    <div class="subtitle"><?php  the_field("questions_subtitle_text", $id_page); ?></div>
                 </div>
                 <div class="block">
                     <div class="questions">
-                        <div class="question">
-                            <div class="icon">[+]</div>
-                            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do?</div>
-                            <div class="clear"></div>
-                            <div class="desc hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat. Duis aute irure dolor in reprehenderit in non voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                        </div>
-                        <div class="question">
-                            <div class="icon">[+]</div>
-                            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do?</div>
-                            <div class="clear"></div>
-                            <div class="desc hidden">Description</div>
-                        </div>
-                        <div class="question">
-                            <div class="icon">[+]</div>
-                            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do?</div>
-                            <div class="clear"></div>
-                            <div class="desc hidden">Description</div>
-                        </div>
-                        <div class="question">
-                            <div class="icon">[+]</div>
-                            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do?</div>
-                            <div class="clear"></div>
-                            <div class="desc hidden">Description</div>
-                        </div>
-                        <div class="question">
-                            <div class="icon">[+]</div>
-                            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do?</div>
-                            <div class="clear"></div>
-                            <div class="desc hidden">Description</div>
-                        </div>
-                        <div class="question">
-                            <div class="icon">[+]</div>
-                            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do?</div>
-                            <div class="clear"></div>
-                            <div class="desc hidden">Description</div>
-                        </div>
+
+                        <?php
+                        global $post;
+                        $tmp_post = $post;
+                        $args = array(  'post_type'=> 'questions', 'order' => 'ASC');
+                        $prices = get_posts( $args );
+                        wp_reset_postdata();
+
+                        foreach( $prices as $item ) {
+                            setup_postdata($item);
+                            ?>
+                            <div class="question">
+                                <div class="icon">[+]</div>
+                                <div class="title"><?php echo $item->post_title; ?></div>
+                                <div class="clear"></div>
+                                <div class="desc hidden">
+                                    <?php echo $item->post_content; ?>
+                                </div>
+                            </div>
+                            <?php
+                            $post = $tmp_post;
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -355,29 +374,33 @@
             <div>
                 <div class="container">
                     <div class="classic-title">
-                        <h1>Location</h1>
+                        <h1><?php  the_field("location_text", $id_page); ?></h1>
                     </div>
                     <div class="adress">
-                        <div class="ad">Lorem ipsum st 38,London</div>
-                        <div class="ph">(972) 405 670 45</div>
-                        <div class="mail">lorem@mail.com</div>
+                        <div class="ad"><?php  the_field("location", $id_page); ?></div>
+                        <div class="ph"><?php  the_field("contact", $id_page); ?>
                         <div class="follow">
-                            Follow us
+                            <?php  the_field("follow_us_text", $id_page); ?>
                             <div>
-                                <div class="social">
-                                    <a target="_blank" href="#"><span class="icon2-Fb_ic"></span></a>
-                                </div>
-                                <div class="social">
-                                    <a target="_blank" href="#"><span class="icon2-In_ic"></span></a>
-                                </div>
-                                <div class="social">
-                                    <a target="_blank" href="#"><span class="icon2-tw_ic"></span></a>
-                                </div>
+                                <?php
+                                $args = array(  'post_type'=> 'social', 'posts_per_page' => -1);
+                                $Social = get_posts( $args );
+                                wp_reset_postdata();
+                                foreach( $Social as $item ) {
+                                    setup_postdata($item);
+                                    $meta_values = get_post_meta( $item->ID );
+                                    ?>
+                                    <div class="social">
+                                        <a target="_blank" href="<?php echo $meta_values["link"][0];?>"><?php echo $meta_values["icon"][0];?></a>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="background-image: url(<?php echo get_template_directory_uri();?>/img/footer_map.png);" class="map">
+                <div style="background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=<?php  the_field("map", $id_page); ?>&zoom=13&size=600x300&maptype=roadmap);" class="map">
 
                 </div>
             </div>
