@@ -16,9 +16,9 @@ $id_page = 51;
             <?php
         }
         ?>
+        <title><?php echo bloginfo('name'); ?></title>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="<?php echo get_template_directory_uri();?>/js/main.js"></script>
-        <?php wp_head(); ?>
     </head>
     <body>
         <div class="left-menu">
@@ -56,7 +56,7 @@ $id_page = 51;
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="<?php echo get_site_url();?>">
+                    <a href="<?php echo get_home_url();?>">
                     <span class="icon-swiego_logo">
                         <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span>
                     </span>
@@ -136,7 +136,7 @@ $id_page = 51;
                     <h1><?php  the_field("title", $id_page); ?></h1>
                     <div class="subtitle"><?php  the_field("subtitle", $id_page); ?></div>
                     <div class="icon">
-                        <a href="#"><span class="icon2-Arrow_down_ic"></span></a>
+                        <a href="#about"><span class="icon2-Arrow_down_ic"></span></a>
                     </div>
                 </div>
                 <div class="cover">

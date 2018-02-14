@@ -721,6 +721,9 @@ a:-webkit-any-link {
     .logo .icon-swiego_logo span, .lines .icon2-Menu_ic, .lines .icon2-Menu_ic-Copy {
         font-size: 22px;
     }
+    .section .maintitle {
+        height: 200px;
+    }
 }
 .publishet {
     text-align: right;

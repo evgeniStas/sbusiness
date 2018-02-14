@@ -1,4 +1,3 @@
-
 @import "css/icon.css";
 @import "css/icon2.css";
 @import "css/Glyphter.css";
@@ -713,6 +712,9 @@ a:-webkit-any-link {
     }
     .logo .icon-swiego_logo span, .lines .icon2-Menu_ic, .lines .icon2-Menu_ic-Copy {
         font-size: 22px;
+    }
+    .section .maintitle {
+        height: 200px;
     }
 }
 .publishet {
