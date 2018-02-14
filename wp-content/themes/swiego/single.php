@@ -150,4 +150,5 @@ $img = get_field('photo', $post_id)["url"];
             </div>
         </div>
     </div>
+    <?php wp_footer() ?>
 </body>
