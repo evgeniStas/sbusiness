@@ -11,3 +11,5 @@ function wpb_custom_new_menu() {
 }
 add_action( 'init', 'wpb_custom_new_menu' );
 add_action( 'init', 'wpb_custom_new_menu' );
+
+add_image_size( 'thindex', 250, 250 );
