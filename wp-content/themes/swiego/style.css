@@ -803,4 +803,9 @@ a:-webkit-any-link {
     position: absolute;
     transform: rotate(900deg);
     font-size: 20px;
+    left: 0;
+    top: 3px;
+}
+.controlQuestions .text {
+    margin-left: 30px;
 }

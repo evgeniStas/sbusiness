@@ -143,7 +143,7 @@ $img = get_field('photo', $post_id)["url"];
         </div>
         <div class="control-links controlQuestions">
             <div class="left">
-                <a href="<?php echo get_home_url();?>"><span class="icon2-Arrow-right"></span> <?php  the_field("b_home_page", $id_page); ?></a>
+                <a href="<?php echo get_home_url();?>"><span class="icon2-Arrow-right"></span> <div class="text"><?php  the_field("b_home_page", $id_page); ?></div></a>
             </div>
             <div class="right">
             </div>
