@@ -34,7 +34,7 @@ License: Creative license
     position: fixed;
     width: 100%;
     z-index: 10;
-    background: #ececec;
+    background: #FAFAFA;
 }
 
 .header .logo {
@@ -66,7 +66,7 @@ html,body {
     font-size: 18px;
     font-family: 'Segue';
     color: #494949;
-    background: #ececec;
+    background: #FAFAFA;
 }
 
 .container {
