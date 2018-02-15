@@ -402,7 +402,8 @@ a:-webkit-any-link {
 .questions .question .arr {
     float: right;
     margin-top: 3px;
-    display:none;
+    margin-right: 10px;
+    visibility: hidden;
 }
 .questions .question .arr span {
     font-size: 24px;
@@ -769,10 +770,6 @@ a:-webkit-any-link {
 }
 .questions .qtitle:hover {
     color: #2A46E9;
-    background: #FAFAFA;
-}
-.questions .question:hover .arr{
-    display: block;
 }
 .questions .qtitle:hover .icon {
     color: #2A46E9;
@@ -782,4 +779,12 @@ a:-webkit-any-link {
 }
 .follow .social:hover span {
     border: 1px solid #2B48ED;
+}
+.questions .question:hover {
+    background: #efefef;
+}
+.questions .question:hover .arr{
+    visibility: visible;
+    margin-right: 0px;
+    transition: 0.15s padding ease-out, 0.15s margin;
 }
