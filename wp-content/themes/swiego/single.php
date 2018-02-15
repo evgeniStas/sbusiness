@@ -122,7 +122,7 @@ $img = get_field('photo', $post_id)["url"];
         </div>
     </div>
     <?php }?>
-    <div style="padding-top: 40px;" id="view" class="section">
+    <div style="<?php if($img){?>padding-top: 40px;<?php }?>" id="view" class="section">
         <div class="container">
             <div class="box">
                 <div class="title">
