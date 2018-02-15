@@ -46,7 +46,7 @@ License: Creative license
 h1 {
     padding: 0px;
     margin: 0px;
-    font-size: 60px;
+    font-size: 70px;
     font-family: 'Europe';
 }
 h2 {
@@ -57,6 +57,7 @@ h2 {
 }
 .subtitle {
     font-size: 30px;
+    margin-top: 10px;
 }
 
 html,body {
@@ -79,7 +80,6 @@ html,body {
     display: block;
     clear: both;
 }
-
 .cover .img {
     height: 100%;
     width: 100%;
@@ -117,12 +117,12 @@ html,body {
     z-index: 2;
     height: 95px;
     position: absolute;
-    top: 0;
     bottom: 0;
     margin: auto 0;
     padding: 30px;
     margin-left: -65px;
     color: #2F2F2F;
+    top: -100px;
 }
 #view .title {
     width: 40%;
@@ -188,6 +188,7 @@ a {
     float: right;
     width: 60%;
     text-align: left;
+    line-height: 1.6;
 }
 .classic-title {
     text-align: left;
@@ -208,27 +209,36 @@ a {
     color: #2A46E9;
     font-size: 23px;
     font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 ul li {
     text-align: left;
 }
 .button {
-    padding: 9px;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding: 6px;
+    padding-left: 23px;
+    padding-right: 23px;
     border: 2px solid #304FFE;
     border-radius: 6px;
     color: #2A46E9;
     display: inline-block;
-    cursor:pointer;
+    cursor: pointer;
 }
 .button:hover {
     background-color: #2A46E9;
     color: #FFFFFF;
 }
+.card li {
+    margin-bottom: 10px;
+}
+.card .controll {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 #news, #questions, #location {
     background: white;
-    padding-top: 150px;
+    padding-top: 250px;
 }
 #news .content
 {
@@ -267,7 +277,7 @@ ul li {
 }
 #news .block .rowthree>div:nth-child(2)
 {
-    width: 855px;
+    width: 995px;
     float: left;
 }
 #news .block .title {
@@ -285,6 +295,11 @@ ul li {
 #news .block .controls .link {
     font-size: 14px;
     float: right;
+    width: 100px;
+}
+#news .block .controls .link:hover .more{
+    padding-right: 10px;
+    transition: 0.15s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
 }
 #news .block .blue .controls .link a, #news .block .dark .controls .link a {
     color:#FCFCFC;
@@ -308,6 +323,7 @@ ul li {
 }
 #news .block .blue .link span, #news .block .dark .link span {
     color:#F5F5F5;
+    vertical-align: middle;
 }
 #news .block .blue .icon2-Arrow-right:before, #news .block .dark .icon2-Arrow-right:before, .block .dark-image .icon2-Arrow-right:before {
     content: "\e901";
@@ -359,7 +375,7 @@ a:-webkit-any-link {
     float: left;
     background: #121111;
     color: #F5F5F5;
-    width: 545px;
+    width: 685px;
     text-align: left;
 }
 .block .dark-image .title, .block .dark-image .controls .link a {
@@ -382,6 +398,14 @@ a:-webkit-any-link {
     float: left;
     margin-left: 20px;
     line-height: 28px;
+}
+.questions .question .arr {
+    float: right;
+    margin-top: 3px;
+    display:none;
+}
+.questions .question .arr span {
+    font-size: 24px;
 }
 .questions .question {
     padding: 15px;
@@ -741,4 +765,21 @@ a:-webkit-any-link {
 #news .description {
     height: 120px;
     overflow: hidden;
+    line-height: 1.6;
+}
+.questions .qtitle:hover {
+    color: #2A46E9;
+    background: #FAFAFA;
+}
+.questions .question:hover .arr{
+    display: block;
+}
+.questions .qtitle:hover .icon {
+    color: #2A46E9;
+}
+.follow .social:hover span:before {
+    color: #2B48ED;
+}
+.follow .social:hover span {
+    border: 1px solid #2B48ED;
 }

@@ -90,7 +90,7 @@ $id_page = 51;
                     </select>
                 </div>
                 <div class="clear"></div>
-                <div class="menu hidden">
+                <div style="height: 1000px;" class="menu hidden">
                     <div class="menu-info">
                         <div class="item">
                             <h1><?php  the_field("location_text", $id_page); ?></h1>
@@ -219,7 +219,7 @@ $id_page = 51;
                                     <div class="description"><?php echo $item->post_content; ?></div>
                                     <div class="controls">
                                         <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
-                                        <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
+                                        <div class="link"><a href="<?php  the_permalink($item);?>"><span class="more"><?php  the_field("read_more_text", $id_page); ?></span> <span class="icon2-Arrow-right"></span></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +255,7 @@ $id_page = 51;
                                                 <div class="description"><?php echo $item->post_content; ?></div>
                                                 <div class="controls">
                                                     <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
-                                                    <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
+                                                    <div class="link"><a href="<?php  the_permalink($item);?>"><span class="more"><?php  the_field("read_more_text", $id_page); ?></span> <span class="icon2-Arrow-right"></span></a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -270,7 +270,7 @@ $id_page = 51;
                                         <div class="description"><?php echo $item->post_content; ?></div>
                                         <div class="controls">
                                             <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
-                                            <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
+                                            <div class="link"><a href="<?php  the_permalink($item);?>"><span class="more"><?php  the_field("read_more_text", $id_page); ?></span> <span class="icon2-Arrow-right"></span></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -298,7 +298,7 @@ $id_page = 51;
                                         </div>
                                         <div class="controls">
                                             <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
-                                            <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?> <span class="icon2-Arrow-right"></span></a></div>
+                                            <div class="link"><a href="<?php  the_permalink($item);?>"><span class="more"><?php  the_field("read_more_text", $id_page); ?></span> <span class="icon2-Arrow-right"></span></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -315,7 +315,7 @@ $id_page = 51;
                                             </div>
                                             <div class="controls">
                                                 <div class="date"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
-                                                <div class="link"><a href="<?php  the_permalink($item);?>"><?php  the_field("read_more_text", $id_page); ?><span class="icon2-Arrow-right"></span></a></div>
+                                                <div class="link"><a href="<?php  the_permalink($item);?>"><span class="more"><?php  the_field("read_more_text", $id_page); ?></span><span class="icon2-Arrow-right"></span></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -356,9 +356,12 @@ $id_page = 51;
                             setup_postdata($item);
                             ?>
                             <div class="question">
-                                <div class="icon">[+]</div>
-                                <div class="title"><?php echo $item->post_title; ?></div>
-                                <div class="clear"></div>
+                                <div class="qtitle">
+                                    <div class="icon">[+]</div>
+                                    <div class="title"><?php echo $item->post_title; ?></div>
+                                    <div class="arr"><span class="icon2-Arrow-right"></span></div>
+                                    <div class="clear"></div>
+                                </div>
                                 <div class="desc hidden">
                                     <?php echo $item->post_content; ?>
                                 </div>
