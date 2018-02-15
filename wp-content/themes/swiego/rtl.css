@@ -376,6 +376,9 @@ a:-webkit-any-link {
     width: 685px;
     text-align: right;
 }
+.questions .question .arr {
+    float: right;
+}
 .block .dark-image .title, .block .dark-image .controls .link a {
     color: #f5f5f5!important;
 }
