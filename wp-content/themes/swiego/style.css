@@ -453,7 +453,7 @@ a:-webkit-any-link {
 #location .map {
     position: absolute;
     right: 0;
-    top: 0px;
+    top: -60px;
     overflow: hidden;
     width: 50%;
     height: 350px;
