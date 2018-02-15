@@ -18,6 +18,14 @@ $img = get_field('photo', $post_id)["url"];
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="<?php echo get_template_directory_uri();?>/js/main.js"></script>
     <?php wp_head(); ?>
+    <style>
+        .maintitle .icon span {
+            border: 3px solid #ffffff;
+        }
+        .icon2-Arrow_down_ic:before {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -99,11 +107,11 @@ $img = get_field('photo', $post_id)["url"];
     </div>
     <div id="home" class="section">
         <div class="container">
-            <div class="maintitle">
+            <div style="background: #304ffed1;" class="maintitle">
                 <h1><?php echo $queried_post->post_title;?></h1>
                 <div class="subtitle"><?php  the_field("subtitle", $id_page); ?></div>
                 <div class="icon">
-                    <a href="#about"><span class="icon2-Arrow_down_ic"></span></a>
+                    <a href="#view"><span class="icon2-Arrow_down_ic"></span></a>
                 </div>
             </div>
             <?php if($img){?>
@@ -114,7 +122,7 @@ $img = get_field('photo', $post_id)["url"];
             <div style="margin-top: 10px;" class="publishet"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
         </div>
     </div>
-    <div id="view" class="section">
+    <div style="padding-top: 40px;" id="view" class="section">
         <div class="container">
             <div class="box">
                 <div class="title">
