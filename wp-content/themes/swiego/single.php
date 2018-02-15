@@ -105,6 +105,7 @@ $img = get_field('photo', $post_id)["url"];
             </div>
         </div>
     </div>
+    <?php if($img){?>
     <div id="home" class="section">
         <div class="container">
             <div style="background: #304ffed1;" class="maintitle">
@@ -114,14 +115,13 @@ $img = get_field('photo', $post_id)["url"];
                     <a href="#view"><span class="icon2-Arrow_down_ic"></span></a>
                 </div>
             </div>
-            <?php if($img){?>
             <div class="cover">
                 <div style="background-image: url('<?php echo $img;?>')" class="img"></div>
             </div>
-            <?php }?>
             <div style="margin-top: 10px;" class="publishet"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
         </div>
     </div>
+    <?php }?>
     <div style="padding-top: 40px;" id="view" class="section">
         <div class="container">
             <div class="box">
