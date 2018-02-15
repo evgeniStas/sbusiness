@@ -204,7 +204,10 @@ a {
     background-color: #FFFFFF;
     margin: 20px;
     padding: 10px;
+}
+#price .item .card:hover {
     box-shadow: 0px 12px 40px -25px #000000;
+    margin-top: 0px;
 }
 #price .item .card .title {
     color: #2A46E9;
@@ -241,7 +244,7 @@ ul li {
 }
 #news, #questions, #location {
     background: white;
-    padding-top: 250px;
+    padding-top: 115px;
 }
 #news .content
 {
@@ -434,7 +437,7 @@ a:-webkit-any-link {
     padding-bottom: 80px;
 }
 #price .container {
-    height: 360px;
+    height: 593px;
     z-index: 2;
 }
 #location .classic-title
