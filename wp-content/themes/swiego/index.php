@@ -404,7 +404,7 @@ $id_page = 51;
                         </div>
                     </div>
                 </div>
-                <div style="background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=<?php  the_field("map", $id_page); ?>&zoom=13&size=600x300&maptype=roadmap);" class="map">
+                <div style="background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=<?php  the_field("map", $id_page); ?>&zoom=13&size=600x300&maptype=roadmap&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8);" class="map">
 
                 </div>
             </div>
