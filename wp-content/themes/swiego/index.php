@@ -303,7 +303,7 @@ $id_page = 51;
                                 </div>
                                 <?php
                             }else{
-                                $img = get_field('photo', $item->ID)["url"];
+                                $img = get_field('photo', $item->ID)["sizes"]["medium"];
                                 ?>
                                 <div>
                                     <div class="dark-image">

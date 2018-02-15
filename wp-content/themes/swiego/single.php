@@ -97,17 +97,28 @@ $img = get_field('photo', $post_id)["url"];
             </div>
         </div>
     </div>
+    <div id="home" class="section">
+        <div class="container">
+            <div class="maintitle">
+                <h1><?php echo $queried_post->post_title;?></h1>
+                <div class="subtitle"><?php  the_field("subtitle", $id_page); ?></div>
+                <div class="icon">
+                    <a href="#about"><span class="icon2-Arrow_down_ic"></span></a>
+                </div>
+            </div>
+            <?php if($img){?>
+            <div class="cover">
+                <div style="background-image: url('<?php echo $img;?>')" class="img"></div>
+            </div>
+            <?php }?>
+            <div style="margin-top: 10px;" class="publishet"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
+        </div>
+    </div>
     <div id="view" class="section">
         <div class="container">
-            <div class="publishet"><?php  the_field("date_text", $id_page); ?> <?php echo date('d.m.Y', strtotime($item->post_date));?></div>
             <div class="box">
                 <div class="title">
                     <div class="post_title"><?php echo $queried_post->post_title;?></div>
-                    <?php if($img){?>
-                    <div>
-                        <img src="<?php echo $img;?>"/>
-                    </div>
-                    <?php }?>
                     <div class="follow">
                         <?php  the_field("follow_us_text", $id_page); ?>
                         <div>

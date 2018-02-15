@@ -130,6 +130,7 @@ html,body {
     padding: 0px;
     margin: 0px;
     font-weight: bold;
+    text-align: left;
 }
 #view .post_title {
     margin-bottom: 20px;
