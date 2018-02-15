@@ -1,6 +1,6 @@
 $(function() {
     $(".questions .question").on("click",function (event) {
-        event.preventDefault();
+        //event.preventDefault();
         var hidden  = $(this).children(".desc").hasClass("hidden");
         if(hidden){
             $(this).children(".desc").removeClass("hidden");

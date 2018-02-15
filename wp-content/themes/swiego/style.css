@@ -794,3 +794,7 @@ a:-webkit-any-link {
     margin-right: 0px;
     transition: 0.15s padding ease-out, 0.15s margin;
 }
+.controlQuestions {
+    margin-top: 105px;
+    padding-bottom: 45px;
+}

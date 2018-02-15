@@ -354,17 +354,16 @@ $id_page = 51;
                         foreach( $prices as $item ) {
                             setup_postdata($item);
                             ?>
-                            <div class="question">
-                                <div class="qtitle">
-                                    <div class="icon">[+]</div>
-                                    <div class="title"><?php echo $item->post_title; ?></div>
-                                    <div class="arr"><span class="icon2-Arrow-right"></span></div>
-                                    <div class="clear"></div>
+                                <div class="question">
+                                    <a href="<?php  the_permalink($item);?>">
+                                        <div class="qtitle">
+                                            <div class="icon">[+]</div>
+                                            <div class="title"><?php echo $item->post_title; ?></div>
+                                            <div class="arr"><span class="icon2-Arrow-right"></span></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="desc hidden">
-                                    <?php echo $item->post_content; ?>
-                                </div>
-                            </div>
                             <?php
                             $post = $tmp_post;
                         }
