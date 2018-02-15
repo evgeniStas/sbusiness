@@ -797,4 +797,10 @@ a:-webkit-any-link {
 .controlQuestions {
     margin-top: 105px;
     padding-bottom: 45px;
+    position: relative;
+}
+.controlQuestions span{
+    position: absolute;
+    transform: rotate(900deg);
+    font-size: 20px;
 }
