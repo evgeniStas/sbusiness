@@ -238,6 +238,7 @@ $id_page = 51;
                             setup_postdata($item);
                             if($i == 0){
                                 $img = get_field('photo', $item->ID)["sizes"]["medium_large"];
+                                var_dump(get_field('photo', $item->ID)["sizes"]);
                                 ?>
                                 <div>
                                     <div>
