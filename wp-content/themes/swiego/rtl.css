@@ -1,3 +1,4 @@
+
 @import "css/icon.css";
 @import "css/icon2.css";
 @import "css/Glyphter.css";
@@ -26,7 +27,7 @@ font-weight: normal;
     position: fixed;
     width: 100%;
     z-index: 10;
-    background: #ececec;
+    background: #FAFAFA;
 }
 
 .header .logo {
@@ -38,7 +39,7 @@ font-weight: normal;
 h1 {
     padding: 0px;
     margin: 0px;
-    font-size: 60px;
+    font-size: 70px;
     font-family: 'Europe';
 }
 h2 {
@@ -49,6 +50,7 @@ h2 {
 }
 .subtitle {
     font-size: 30px;
+    margin-top: 10px;
 }
 
 html,body {
@@ -58,7 +60,7 @@ html,body {
     font-size: 18px;
     font-family: 'Segue';
     color: #494949;
-    background: #ececec;
+    background: #EEEEEE;
 }
 
 .container {
@@ -71,7 +73,6 @@ html,body {
     display: block;
     clear: both;
 }
-
 .cover .img {
     height: 100%;
     width: 100%;
@@ -109,12 +110,12 @@ html,body {
     z-index: 2;
     height: 95px;
     position: absolute;
-    top: 0;
     bottom: 0;
     margin: auto 0;
     padding: 30px;
     margin-right: -65px;
     color: #2F2F2F;
+    top: -100px;
 }
 #view .title {
     width: 40%;
@@ -122,6 +123,7 @@ html,body {
     padding: 0px;
     margin: 0px;
     font-weight: bold;
+    text-align: right;
 }
 #view .post_title {
     margin-bottom: 20px;
@@ -180,6 +182,7 @@ a {
     float: left;
     width: 60%;
     text-align: right;
+    line-height: 1.6;
 }
 .classic-title {
     text-align: right;
@@ -194,33 +197,47 @@ a {
     background-color: #FFFFFF;
     margin: 20px;
     padding: 10px;
+}
+#price .item .card:hover {
     box-shadow: 0px 12px 40px -25px #000000;
+    margin-top: 0px;
 }
 #price .item .card .title {
     color: #2A46E9;
     font-size: 23px;
     font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 ul li {
     text-align: right;
 }
 .button {
-    padding: 9px;
-    padding-right: 18px;
-    padding-left: 18px;
+    padding: 6px;
+    padding-right: 23px;
+    padding-left: 23px;
     border: 2px solid #304FFE;
     border-radius: 6px;
     color: #2A46E9;
     display: inline-block;
-    cursor:pointer;
+    cursor: pointer;
+    font-size: 16px;
+    word-spacing: 2px;
 }
 .button:hover {
     background-color: #2A46E9;
     color: #FFFFFF;
 }
+.card li {
+    margin-bottom: 10px;
+}
+.card .controll {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 #news, #questions, #location {
     background: white;
-    padding-top: 150px;
+    padding-top: 115px;
 }
 #news .content
 {
@@ -259,7 +276,7 @@ ul li {
 }
 #news .block .rowthree>div:nth-child(2)
 {
-    width: 855px;
+    width: 995px;
     float: right;
 }
 #news .block .title {
@@ -277,6 +294,11 @@ ul li {
 #news .block .controls .link {
     font-size: 14px;
     float: left;
+    width: 100px;
+}
+#news .block .controls .link:hover .more{
+    padding-left: 10px;
+    transition: 0.15s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
 }
 #news .block .blue .controls .link a, #news .block .dark .controls .link a {
     color:#FCFCFC;
@@ -338,7 +360,7 @@ a:-webkit-any-link {
     text-align: right;
 }
 .container {
-    width: 1160px;
+    width: 1300px;
     position: relative;
 }
 .block .image .photo {
@@ -351,7 +373,7 @@ a:-webkit-any-link {
     float: right;
     background: #121111;
     color: #F5F5F5;
-    width: 545px;
+    width: 685px;
     text-align: right;
 }
 .block .dark-image .title, .block .dark-image .controls .link a {
@@ -374,6 +396,15 @@ a:-webkit-any-link {
     float: right;
     margin-right: 20px;
     line-height: 28px;
+}
+.questions .question .arr {
+    float: left;
+    margin-top: 3px;
+    margin-left: 10px;
+    visibility: hidden;
+}
+.questions .question .arr span {
+    font-size: 24px;
 }
 .questions .question {
     padding: 15px;
@@ -399,7 +430,7 @@ a:-webkit-any-link {
     padding-bottom: 80px;
 }
 #price .container {
-    height: 360px;
+    height: 593px;
     z-index: 2;
 }
 #location .classic-title
@@ -418,7 +449,7 @@ a:-webkit-any-link {
 #location .map {
     position: absolute;
     left: 0;
-    top: 0px;
+    top: -60px;
     overflow: hidden;
     width: 50%;
     height: 350px;
@@ -722,7 +753,8 @@ a:-webkit-any-link {
     margin-bottom: 10px;
 }
 .control-links {
-    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .control-links .left {
     float:right;
@@ -733,4 +765,40 @@ a:-webkit-any-link {
 #news .description {
     height: 120px;
     overflow: hidden;
+    line-height: 1.6;
+}
+.questions .qtitle:hover {
+    color: #2A46E9;
+}
+.questions .qtitle:hover .icon {
+    color: #2A46E9;
+}
+.follow .social:hover span:before {
+    color: #2B48ED;
+}
+.follow .social:hover span {
+    border: 1px solid #2B48ED;
+}
+.questions .question:hover {
+    background: #efefef;
+}
+.questions .question:hover .arr{
+    visibility: visible;
+    margin-left: 0px;
+    transition: 0.15s padding ease-out, 0.15s margin;
+}
+.controlQuestions {
+    margin-top: 105px;
+    padding-bottom: 45px;
+    position: relative;
+}
+.controlQuestions span{
+    position: absolute;
+    transform: rotate(-900deg);
+    font-size: 20px;
+    right: 0;
+    top: 3px;
+}
+.controlQuestions .text {
+    margin-right: 30px;
 }
