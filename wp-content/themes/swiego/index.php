@@ -237,8 +237,7 @@ $id_page = 51;
                         foreach( $news as $item ) {
                             setup_postdata($item);
                             if($i == 0){
-                                $img = get_field('photo', $item->ID)["sizes"]["medium_large"];
-                                var_dump(get_field('photo', $item->ID)["sizes"]);
+                                $img = get_field('photo', $item->ID)["sizes"]["thindex"];
                                 ?>
                                 <div>
                                     <div>
@@ -304,7 +303,7 @@ $id_page = 51;
                                 </div>
                                 <?php
                             }else{
-                                $img = get_field('photo', $item->ID)["sizes"]["medium_large"];
+                                $img = get_field('photo', $item->ID)["sizes"]["thindex"];
                                 ?>
                                 <div>
                                     <div class="dark-image">
