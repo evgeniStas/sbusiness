@@ -237,8 +237,7 @@ $id_page = 51;
                         foreach( $news as $item ) {
                             setup_postdata($item);
                             if($i == 0){
-                                $img = get_field('photo', $item->ID)["url"];
-                                //var_dump($item);
+                                $img = get_field('photo', $item->ID)["sizes"]["medium"];
                                 ?>
                                 <div>
                                     <div>
