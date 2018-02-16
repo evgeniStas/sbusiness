@@ -131,7 +131,7 @@ $img = get_field('photo', $post_id)["url"];
                             <div class="arr"><span class="icon2-Arrow-right"></span></div>
                             <div class="clear"></div>
                         </div>
-                        <div class="desc hidden">
+                        <div class="desc <?php if($post_id != $item->ID){?>hidden<?php }?>">
                             <?php echo $item->post_content; ?>
                         </div>
                     </div>
