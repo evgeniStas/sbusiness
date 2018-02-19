@@ -105,7 +105,13 @@ $img = get_field('photo', $post_id)["url"];
             </div>
         </div>
     </div>
-    <?php if($img){?>
+    <?php
+
+    if(!$img){
+        $img = get_field('default_pic', $id_page)["url"];
+    }
+
+    if($img){?>
     <div id="home" class="section">
         <div class="container">
             <div style="background: #304ffed1;" class="maintitle">

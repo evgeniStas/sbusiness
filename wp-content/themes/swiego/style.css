@@ -102,7 +102,7 @@ html,body {
     left: 0px;
     background: #304FFE;
     z-index: 2;
-    height: 95px;
+    height: 120px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -594,7 +594,7 @@ a:-webkit-any-link {
         font-size: 40px;
     }
     .section .maintitle {
-        height: 150px;
+        height: 180px;
     }
     #location .container {
         width: 600px;
@@ -752,7 +752,7 @@ a:-webkit-any-link {
         font-size: 22px;
     }
     .section .maintitle {
-        height: 200px;
+        height: 100px;
     }
 }
 .publishet {
